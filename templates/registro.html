@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>
+        Crear cuenta
+    </title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    >
+    <style>
+        body {
+            min-height: 100vh;
+            background-color: #f7faef;
+            font-family:
+            "Segoe UI",
+            Tahoma,
+            Geneva,
+            Verdana,
+            sans-serif;
+        }
+        .navbar {
+            background-color: #2e4a19;
+        }
+        .registro-card {
+            border: none;
+            border-radius: 20px;
+            box-shadow:
+            0 10px 35px
+            rgba(
+                0,
+                0,
+                0,
+                0.10
+            );
+        }
+        .icono {
+            width: 85px;
+            height: 85px;
+            margin: auto;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #eaf5e9;
+            color: #4ca154;
+            font-size: 42px;
+        }
+        .form-control {
+            border-radius: 12px;
+            padding: 12px;
+        }
+        .btn-avocado {
+            background-color: #4ca154;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px;
+            font-weight: bold;
+        }
+        .btn-avocado:hover {
+            background-color: #2e4a19;
+            color: white;
+        }
+        .volver {
+            color: #2e4a19;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<nav
+    class="navbar navbar-dark shadow-sm"
+>
+    <div
+        class="container"
+    >
+        <a
+            class="navbar-brand fw-bold"
+            href="/"
+        >
+            <i
+                class="bi bi-tree-fill me-2"
+            ></i>
+            Agro
+        </a>
+    </div>
+</nav>
+<div
+    class="container"
+>
+    <div
+        class="row justify-content-center align-items-center"
+        style="min-height: 88vh;"
+    >
+        <div
+            class="col-md-7 col-lg-5"
+        >
+            <div
+                class="card registro-card p-4 p-md-5"
+            >
+                <div
+                    class="icono mb-3"
+                >
+                    <i
+                        class="bi bi-person-plus-fill"
+                    ></i>
+                </div>
+                <h2
+                    class="text-center fw-bold"
+                    style="color: #2e4a19;"
+                >
+                    Crear cuenta
+                </h2>
+                <p
+                    class="text-center text-muted mb-4"
+                >
+                    Registre sus datos
+                    para ingresar
+                </p>
+                {% if error %}
+                    <div
+                        class="alert alert-danger"
+                    >
+                        {{ error }}
+                    </div>
+                {% endif %}
+                <form
+                    action="/registro"
+                    method="POST"
+                >
+                    <div
+                        class="mb-3"
+                    >
+                        <label
+                            class="form-label fw-semibold"
+                        >
+                            Nombre de usuario
+                        </label>
+                        <input
+                            type="text"
+                            name="usuario"
+                            class="form-control"
+                            placeholder="Cree un usuario"
+                            required
+                        >
+                    </div>
+                    <div
+                        class="mb-3"
+                    >
+                        <label
+                            class="form-label fw-semibold"
+                        >
+                            Contraseña
+                        </label>
+                        <input
+                            type="password"
+                            name="contrasena"
+                            class="form-control"
+                            placeholder="Cree una contraseña"
+                            required
+                        >
+                    </div>
+                    <div
+                        class="mb-4"
+                    >
+                        <label
+                            class="form-label fw-semibold"
+                        >
+                            Confirmar contraseña
+                        </label>
+                        <input
+                            type="password"
+                            name="confirmar"
+                            class="form-control"
+                            placeholder="Repita la contraseña"
+                            required
+                        >
+                    </div>
+                    <button
+                        type="submit"
+                        class="btn btn-avocado w-100"
+                    >
+                        <i
+                            class="bi bi-person-check-fill me-2"
+                        ></i>
+                        Crear cuenta
+                    </button>
+                </form>
+                <p
+                    class="text-center mt-4 mb-0"
+                >
+                    <a
+                        href="/"
+                        class="volver"
+                    >
+                        <i
+                            class="bi bi-arrow-left"
+                        ></i>
+                        Volver al inicio
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
